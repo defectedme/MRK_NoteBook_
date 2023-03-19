@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRK_NoteBook.Views.ProductsPageView"
+             Title="Products">
+
+    <StackLayout>
+        <ListView x:Name="listContacts" ItemSelected="listContacts_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"                                                          
+                           Source="mrk.svg" 
+                           Aspect="AspectFill"
+                           HeightRequest="30"
+                           WidthRequest="30" />
+
+                            <Label Grid.Column="1"
+                           Text="{Binding Product}"
+                           FontAttributes="Bold" />
+
+                            <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Info}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Cancel" Grid.Row="1" Grid.Column="2" Clicked="OnCancelButtonClicked" Margin="4,4"/>
+    </StackLayout>
+</ContentPage>

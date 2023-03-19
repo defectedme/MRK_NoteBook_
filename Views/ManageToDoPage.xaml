@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRK_NoteBook.Views.ManageToDoPage"
+             
+             Title="Add your needs">
+        <StackLayout>
+
+            <TableView Intent="Data" Grid.Row="0" Grid.ColumnSpan="3">
+            <TableRoot>
+                <TableSection Title="What do you want to do?">
+                    <EntryCell Text="{Binding ToDoName}" Placeholder="Enter Topic"/>
+                    <EntryCell Text="{Binding Product}" Placeholder="Enter Product"/>
+                    
+                </TableSection>
+                
+            </TableRoot>
+            
+        </TableView>
+
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Margin="0,10"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Done ? " FontAttributes="Bold" />
+                <Switch HorizontalOptions="EndAndExpand" ThumbColor="Blue" IsToggled="{Binding Done}" />
+            </StackLayout>
+
+
+        <Button Text="Save" Grid.Row="1" Grid.Column="0" Clicked="OnSaveButtonClicked" Margin="4,4"/>
+        <Button Text="Delete" Grid.Row="1" Grid.Column="1"  Clicked="OnDeleteButtonClicked" Margin="4,4" />
+        <Button Text="Cancel" Grid.Row="1" Grid.Column="2" Clicked="OnCancelButtonClicked" Margin="4,4"/>
+        </StackLayout>
+   
+</ContentPage>

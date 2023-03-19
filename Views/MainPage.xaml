@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRK_NoteBook.Views.MainPage"
+             Title="Your tasks List">
+
+
+ 
+
+
+         <ContentPage.ToolbarItems  >
+
+        <ToolbarItem  FlyoutItem.IsVisible="True"  FlexLayout.AlignSelf="Auto" Text="Add" 
+                     Clicked="OnAddToDoClicked" />
+        <ToolbarItem  Text="Products?" 
+                     Clicked="OnProductsClicked" />
+        <ToolbarItem Priority="3" Text="About" 
+                     Clicked="OnAbouToClicked" />
+
+        <ToolbarItem Text="Secure Folder" 
+                     Clicked="LogInClicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+        
+
+        <ListView x:Name="collectionView"   ItemSelected="OnSelectionChanged">
+            <ListView.ItemTemplate >
+                <DataTemplate >
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions >
+                            <Image Source="lock5.jpg"
+                           Aspect="AspectFill"
+                           HeightRequest="20"
+                           WidthRequest="20" />
+                            <Label Text=" Topic :" Margin="5,0,5,0" FontAttributes="Bold"  Grid.Column="0" />
+                            <Label Grid.Column="1"
+                           Text="{Binding ToDoName}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End"/>
+                            <Label Text=" Product :" Margin="5,0,5,0" FontAttributes="Bold"  Grid.Column="2"/>
+                            <Label 
+                           Grid.Column="3"
+                           Text="{Binding Product}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End" />
+                            <Label Text=" Info : " Margin="5,0,5,0" FontAttributes="Bold" Grid.Column="4"/>
+                            <Label 
+                           Grid.Column="5" 
+                           Text="{Binding Info}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End" />
+                            <Label Text="checked? :" TextColor="Orange" FontAttributes="Bold" Grid.Column="6" Margin="5,0,5,0"/>
+                            <Image
+                            HorizontalOptions="End" Grid.Column="7"
+                            IsVisible="{Binding Done}"
+                            Source="checkmark.png" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button VerticalOptions="End" HeightRequest="40" BackgroundColor="Red" Text="DELETE ALL DATA?" Grid.Row="1" Grid.Column="2" Clicked="DeleteAllDbButton" Margin="4,4"/>
+    </Grid>
+</ContentPage>

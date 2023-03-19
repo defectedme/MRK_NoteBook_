@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRK_NoteBook.Views.SecureFolderView"
+             Title="Secure Folder">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="Azure">
+            <Image Source="login2.jpg" HeightRequest="350" Margin="30,0,0,0"   Aspect="Fill"/>
+
+            <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+
+
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" TextColor="Red" Grid.Column="0" Text="SECURE FOLDER ACCESS"  FontSize="20" FontAttributes="Bold" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="User Name"  FontSize="17" FontAttributes="Bold" TextColor="#2C363C"/>
+
+                <!--<Frame BorderColor="Blue" Grid.Row="2" Grid.Column="0"   HeightRequest="36" WidthRequest="200">
+                    <Entry VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="0" Text="{Binding SecureUserName}" BackgroundColor="White" HeightRequest="30"  WidthRequest="195"/>
+                </Frame>-->
+                <Frame BorderColor="Blue" Grid.Row="2" Grid.Column="0"  Padding="2" HeightRequest="38" WidthRequest="200">
+                    <Entry  Text="{Binding SecureUserName}" BackgroundColor="White" HeightRequest="35"  WidthRequest="180"/>
+                </Frame>
+
+
+
+                <Label Grid.Row="3" Text="Password" Padding="2" FontAttributes="Bold" FontSize="17" TextColor="#2C363C"/>
+
+                <Frame BorderColor="Blue" Grid.Row="4" Padding="2"  HeightRequest="35" WidthRequest="200">
+                    <Entry Text="{Binding SecurePassword}" MaximumHeightRequest="4" IsPassword="true"   HeightRequest="30"  WidthRequest="195"/>
+                </Frame>
+                <Grid Grid.Row="5" Padding="0,40,0,0">
+                    <VerticalStackLayout Spacing="20">
+                        <Button Text="Login" Command="{Binding LoginSecureCommand}"  TextColor="White" BackgroundColor="#2C363C" HeightRequest="40" WidthRequest="100"/>
+                        <Button Text="Register" Command="{Binding RegisterSecureCommand}" TextColor="White" BackgroundColor="#2C363C" HeightRequest="40" WidthRequest="100" />
+                    </VerticalStackLayout>
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>

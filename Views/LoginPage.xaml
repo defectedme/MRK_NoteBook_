@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRK_NoteBook.Views.LoginPage"
+             Title="LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="lock6.jpg" VerticalOptions="Fill" Aspect="Fill"/>
+            <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="User Name"  FontSize="17" FontAttributes="Bold" TextColor="#2C363C"/>
+
+                <!--<Frame BorderColor="Blue" Grid.Row="1" Grid.Column="0"   HeightRequest="36" WidthRequest="200">
+                    <Entry VerticalTextAlignment="Center"  Grid.Row="0" Grid.Column="0" Text="{Binding UserName}" BackgroundColor="White" HeightRequest="30"  WidthRequest="195"/>
+                </Frame>-->
+
+                <Frame BorderColor="Blue"  Grid.Row="1" Grid.Column="0"  Padding="2" HeightRequest="43" WidthRequest="200">
+                    <Entry  Text="{Binding UserName}" BackgroundColor="White" HeightRequest="40"  WidthRequest="180"/>
+                </Frame>
+
+                <Label Grid.Row="2" Text="Password" Padding="2" FontAttributes="Bold" FontSize="17" TextColor="#2C363C"/>
+
+                <Frame BorderColor="Blue" Grid.Row="3" Padding="2"  HeightRequest="43" WidthRequest="200">
+                    <Entry Text="{Binding Password}" MaximumHeightRequest="4" IsPassword="true"   HeightRequest="40"  WidthRequest="195"/>
+                </Frame>
+                <Grid Grid.Row="4" Padding="0,40,0,0">
+                    <VerticalStackLayout Spacing="20">
+                        <Button Text="Login" Command="{Binding LoginCommand}" TextColor="White" BackgroundColor="#2C363C" HeightRequest="40" WidthRequest="100"/>
+                        <Button Text="Register" Command="{Binding RegisterCommand}" TextColor="White" BackgroundColor="#2C363C" HeightRequest="40" WidthRequest="100" />
+                    </VerticalStackLayout>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+
+
+    <!--<ContentPage.Content>
+        <Grid>
+            <Image Source="bg.jpeg" VerticalOptions="Fill" Aspect="Fill"/>
+            <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="User Name" FontSize="15" FontAttributes="Bold" TextColor="#2C363C"/>
+                <Frame BorderColor="Blue" Grid.Row="1" Grid.Column="0"  Padding="2" HeightRequest="30" WidthRequest="250">
+                    <Entry  Text="{Binding UserName}" BackgroundColor="White" HeightRequest="35"  WidthRequest="270"/>
+                </Frame>
+                <Label Grid.Row="2" Text="Password" Padding="2" FontAttributes="Bold" FontSize="17" TextColor="#2C363C"/>
+                <Frame BorderColor="Blue" Grid.Row="3" Padding="2"  HeightRequest="30" WidthRequest="250">
+                    <Entry Text="{Binding Password}" IsPassword="True"  BackgroundColor="White" HeightRequest="25"  WidthRequest="300"/>
+                </Frame>
+                <Grid Grid.Row="4" Padding="0,40,0,0">
+                    <VerticalStackLayout Spacing="20">
+                        <Button Text="Login" Command="{Binding LoginCommand}" TextColor="White" BackgroundColor="#2C363C" HeightRequest="40" WidthRequest="100"/>
+                        <Button Text="Register" Command="{Binding RegisterCommand}" TextColor="White" BackgroundColor="#2C363C" HeightRequest="40" WidthRequest="100" />
+                    </VerticalStackLayout>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>-->
+
+
+</ContentPage>
