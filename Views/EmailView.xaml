@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MRK_NoteBook.Views.EmailView"
+             xmlns:viewModel="clr-namespace:MRK_NoteBook.ViewModel"
+             x:DataType="viewModel:EmailViewModel"
+             Title="Email">
+
+    <Grid RowSpacing="5" ColumnSpacing="40" Margin="20" VerticalOptions="CenterAndExpand">
+        <Grid.RowDefinitions >
+            <RowDefinition  Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="2"
+               Text="SEND MAIL"
+               TextDecorations="None"
+               HorizontalTextAlignment="Center"
+               FontSize="40"
+               FontAttributes="Bold"/>
+
+        <!--<Label Grid.Row="1"
+               Grid.Column="2"
+               Text="Add Email addresses"
+               TextDecorations="None"
+               HorizontalTextAlignment="Center"
+               FontSize="40"
+               FontAttributes="Bold"/>-->
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Text="To"
+               Margin="0,17,0,0"
+               TextDecorations="None"
+               HorizontalTextAlignment="Center"
+               FontSize="20"
+               FontAttributes="Bold"/>
+
+        <Entry Grid.Row="2"
+               Grid.Column="1"
+               Placeholder="email"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               FontAttributes="Bold"
+               Text="{Binding GetEmail.TO, Mode=TwoWay}"/>
+
+        <BoxView HeightRequest="1"
+                 BackgroundColor="Black"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="3"/>
+
+
+
+        <Label Grid.Row="4"
+               Grid.Column="0"
+               Text="CC"
+               TextDecorations="None"
+               Margin="0,17,0,0"
+               HorizontalTextAlignment="Center"
+               FontSize="20"
+               FontAttributes="Bold"/>
+
+        <Entry Grid.Row="4"
+               Grid.Column="1"
+               Placeholder="email"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               FontAttributes="Bold"
+               Text="{Binding GetEmail.CC, Mode=TwoWay}"/>
+
+        <BoxView HeightRequest="1"
+                 BackgroundColor="Black"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="5"/>
+
+
+        <Label Grid.Row="6"
+               Grid.Column="0"
+               Margin="0,10,0,0"
+               Text="Subject"
+               TextDecorations="None"
+               HorizontalTextAlignment="Center"
+               FontSize="20"
+               FontAttributes="Bold"/>
+
+        <Entry Grid.Row="6"
+               Grid.Column="1"
+               Placeholder="Topic"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               FontAttributes="Bold"
+               Text="{Binding GetEmail.Subject, Mode=TwoWay}"/>
+
+        <BoxView HeightRequest="1"
+                 BackgroundColor="Black"
+                 Grid.ColumnSpan="7"
+                 Grid.Row="3"/>
+
+
+        <Label Grid.Row="9"
+               Grid.Column="0"
+               Margin="0,10,0,0"
+               Text="Body"
+               TextDecorations="None"
+               HorizontalTextAlignment="Center"
+               FontSize="20"
+               FontAttributes="Bold"/>
+
+        <Entry Grid.Row="8"
+               Grid.Column="1"
+               Placeholder="Message"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               FontAttributes="Bold"
+               Text="{Binding GetEmail.Body, Mode=TwoWay}"/>
+
+        <BoxView HeightRequest="1"
+                 BackgroundColor="Black"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="9"/>
+
+        <Button Margin="0,50,0,0"
+                Grid.Row="9"
+                Grid.ColumnSpan="2"
+                Text="Send"
+                FontSize="Large"
+                FontAttributes="Bold"
+                TextTransform="Uppercase"
+                Command="{Binding SendMailCommand}"/>
+
+
+    </Grid>
+
+
+</ContentPage>

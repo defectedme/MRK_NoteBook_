@@ -8,6 +8,7 @@ namespace MRK_NoteBook.Data
 
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
+        public string UserName { get; set; }
         public string ToDoName { get; set; }
         public string Note { get; set; }
         public bool Done { get; set; }
@@ -18,7 +19,7 @@ namespace MRK_NoteBook.Data
 
         //[PrimaryKey]
 
-        public string UserName { get; set; }
+        //public string UserName { get; set; }
         public string Password { get; set; }
 
 

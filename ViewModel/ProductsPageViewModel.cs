@@ -46,9 +46,9 @@ namespace MRK_NoteBook.Models
 
 
         public static List<ToDo> GetToDo() => _contacts;
-        public static ToDo GetContactById(int id)
+        public static ToDo GetContactById(string id)
         {
-            return _contacts.FirstOrDefault(x => x.ID == id);
+            return _contacts.FirstOrDefault(x => x.UserName == id);
         }
 
 

@@ -4,12 +4,15 @@ using MRK_NoteBook.Models;
 using MRK_NoteBook.Views;
 using MRK_NoteBook.Data;
 using System;
+using MRK_NoteBook.ViewModel;
 
 namespace MRK_NoteBook.Views;
 [XamlCompilation(XamlCompilationOptions.Compile)]
 
 public partial class MainPage : ContentPage
 {
+    private object emailViewModel;
+
     //ProductsPageView productPageView;
 
 
@@ -81,6 +84,13 @@ public partial class MainPage : ContentPage
         BindingContext = new ToDo();
 
     }
+    async void CalculatorViewClecekd(object sender, EventArgs e)
+    {
+
+        await Navigation.PushAsync(new CalculatorView());
+        BindingContext = new ToDo();
+
+    }
 
 
 
@@ -90,6 +100,13 @@ public partial class MainPage : ContentPage
 
         Navigation.PushAsync(new OnAbouToClicked());
         DisplayAlert("GO to About", "MRK Page", "ok");
+
+    }    
+    
+    void MailClecekd(object sender, EventArgs e)
+    {
+
+        Navigation.PushAsync(new EmailView());
 
     }
 

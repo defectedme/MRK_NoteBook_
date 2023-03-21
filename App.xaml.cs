@@ -13,6 +13,7 @@ public partial class App : Application
         //MainPage = new LoginPage();
         //MainPage = new NavigationPage(new SecureItemsView());
         MainPage = new NavigationPage(new LoginPage());
+        //MainPage = new NavigationPage(new EmailView());
 
     }
     static LoginDatabase loginDatabase;

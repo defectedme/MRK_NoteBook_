@@ -5,10 +5,10 @@
              Title="Your tasks List">
 
 
- 
 
 
-         <ContentPage.ToolbarItems  >
+
+    <ContentPage.ToolbarItems  >
 
         <ToolbarItem  FlyoutItem.IsVisible="True"  FlexLayout.AlignSelf="Auto" Text="Add" 
                      Clicked="OnAddToDoClicked" />
@@ -16,9 +16,12 @@
                      Clicked="OnProductsClicked" />
         <ToolbarItem Priority="3" Text="About" 
                      Clicked="OnAbouToClicked" />
-
         <ToolbarItem Text="Secure Folder" 
                      Clicked="LogInClicked" />
+        <ToolbarItem Text="Cal" 
+                     Clicked="CalculatorViewClecekd" />       
+        <ToolbarItem Text="Mail" 
+                     Clicked="MailClecekd" />
     </ContentPage.ToolbarItems>
 
     <Grid>

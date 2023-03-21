@@ -22,8 +22,9 @@ namespace MRK_NoteBook.DataServices
 
         public Task<ToDo> GetLoginDataAsync(string secureuserName)
         {
+
             return secureloginDatabase.Table<ToDo>()
-                .Where(i => i.SecureUserName == secureuserName )
+                .Where(i => i.SecureUserName == secureuserName)
                 .FirstOrDefaultAsync();
         }
 

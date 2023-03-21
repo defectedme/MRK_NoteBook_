@@ -1,6 +1,6 @@
 ﻿using Syncfusion.Maui.Core.Hosting;
 using MRK_NoteBook.Views;
-
+using MRK_NoteBook.ViewModel;
 
 namespace MRK_NoteBook;
 
@@ -21,7 +21,10 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddTransient<ManageToDoPage>();
-        //builder.Services.AddTransient<LoginPage>();
+        //builder.Services.AddTransient<EmailView>();
+        //builder.Services.AddTransient<EmailViewModel>();
+        builder.Services.AddTransient<LoginPage>();
+        builder.Services.AddTransient<LoginViewModel>();
         builder.ConfigureSyncfusionCore();
 
 
